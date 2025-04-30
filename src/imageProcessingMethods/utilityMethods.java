@@ -55,7 +55,7 @@ public class utilityMethods {
                 }
             }
             File output = new File(fileName);
-            ImageIO.write(result, "jpg", output)
+            ImageIO.write(result, "jpg", output);
         } catch (Exception e) {
             System.out.println("Failed to save image: " + e.getLocalizedMessage());
         }
@@ -63,7 +63,7 @@ public class utilityMethods {
     /* This method accepts an int value representing the pixel
     hexadecimal value and returns a 4 element int array consisting of R, G, B and A values
      */
-    public static int[][] getRGBAFromPixel(int pixelColorValue) {
+    public static int[] getRGBAFromPixel(int pixelColorValue) {
         Color pixelColor = new Color(pixelColorValue);
         return new int[] { pixelColor.getRed(), pixelColor.getGreen(), pixelColor.getBlue(), pixelColor.getAlpha() };
     }
@@ -94,7 +94,7 @@ and convert it into a single int value representing the pixel hexadecimal value
                 }
             }
             System.out.println("Raw pixel data from the top left corner.");
-            System.out.println(Arrays.toString(rawPixels).replace("],", "],\n" + "\n");
+            System.out.println(Arrays.toString(rawPixels).replace("],", "],\n" + "\n"));
             int[][][] rgbPixels = new int[3][3][4];
             for (int row = 0; row < 3; row++) {
                 for (int col = 0; col < 3; col++) {
